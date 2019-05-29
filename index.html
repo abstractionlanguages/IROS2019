@@ -255,7 +255,7 @@
             launched within the last 6 months. Revolving around the <a href="https://ros.org">ROS ecosystem (Robot Operative System)</a>, we focus on the cloud infrastructure provided by <a href="https://aws.amazon.com/robomaker/">Amazon Web
               Services (AWS) RoboMaker</a>, and the open-source <a href="https://github.com/robotcaresystems/RoboticsLanguage">Robotics Language (RoL)</a> as a general-purpose robotics programming language. With the combination of both tools, users
             can speed up development without the need of setting up infrastructure or use very low-level programming languages. Yet, the outcome is industrial-strength high performance computation, by leveraging on cloud computing and auto-generated
-            c++ code. This interactive tutorial spans the entire development process: from setting up a cloud-based development environment, programing a non- trivial behavior on a robot, simulating, and finally deploying. </p>
+            c++/python/javascript code. This interactive tutorial spans the entire development process: from setting up a cloud-based development environment, programing a non- trivial behavior on a robot, simulating, and finally deploying. </p>
           <p> AWS RoboMaker is a service that makes it easy to develop, test, and deploy intelligent robotics applications at scale. RoboMaker extends the most widely used open-source robotics software framework, ROS, with connectivity to cloud
             services. This includes AWS machine learning services, monitoring services, and analytics services that enable a robot to stream data, navigate, communicate, comprehend, and learn. RoboMaker provides a robotics development environment
             for application development, a robotics simulation service to accelerate application testing, and a robotics fleet management service for remote application deployment, update, and management. More information at: <a href="https://aws.amazon.com/robomaker/">https://aws.amazon.com/robomaker/</a>
@@ -267,8 +267,6 @@
           </p>
           <p> This tutorial also serves as a vehicle for discussion in the way future robotics development will evolve. We aim to address cloud vs edge computing; shared knowledge and learning; programing languages and abstractions; safety, privacy,
             performance and certification. </p>
-
-
           <h3>Topics of interest</h3>
           <div class="ui bulleted list">
             <div class="item">
@@ -299,16 +297,12 @@
               <p>Correct-by-design software and certificaton </p>
             </div>
           </div>
-
           <h3>Intended audience</h3>
-<p>
-            The topics addressed in the tutorial are crucial for all developers of robotic applications, being in industry or academia. In industry it is particularly relevant for startups and SME’s where agile development, small teams and cutting-edge tools are used to create new disruptive robots. Time saved in infrastructure and programming is used for innovation. For more established companies, scalability and cloud computation are crucial. For academics, the tools presented in the tutorial remove the tremendous infrastructure and programming overhead put on robotics students, thus allowing them to focus on algorithms. Using the web tools provided by the AWS cloud infrastructure and the programming abstractions available in RoL, non-technical users can program robots using high-level behaviors. Thus, non-technical robotics stakeholders also benefit from this tutorial.</p>
-            <p>
-The target audience ranges industry and academia, from young students as users, to senior professionals as contributors. In particular, roboticists, computer scientists, linguists, and other relevant non-technical are welcomed.
-</p>
-
-
-
+          <p> The topics addressed in the tutorial are crucial for all developers of robotic applications, being in industry or academia. In industry it is particularly relevant for startups and SME’s where agile development, small teams and
+            cutting-edge tools are used to create new disruptive robots. Time saved in infrastructure and programming is used for innovation. For more established companies, scalability and cloud computation are crucial. For academics, the tools
+            presented in the tutorial remove the tremendous infrastructure and programming overhead put on robotics students, thus allowing them to focus on algorithms. Using the web tools provided by the AWS cloud infrastructure and the programming
+            abstractions available in RoL, non-technical users can program robots using high-level behaviors. Thus, non-technical robotics stakeholders also benefit from this tutorial.</p>
+          <p> The target audience ranges industry and academia, from young students as users, to senior professionals as contributors. In particular, roboticists, computer scientists, linguists, and other relevant non-technical are welcomed. </p>
           <h1 class="ui horizontal header divider">
             <a name="Organizers">Organizers</a>
           </h1>
@@ -343,128 +337,76 @@ The target audience ranges industry and academia, from young students as users, 
                   autonomy and model-based engineering. He also (jointly) lead Team Delft, that won the Amazon Robotics Challenge 2016.</p>
               </div>
             </div>
-            <!-- <div class="row">
-              <div class="column">
-                <img width="200" src="images/box.png" />
-                <p class="smalltext"> Person .... </p>
-              </div>
-            </div> -->
           </div>
           <h1 class="ui horizontal header divider">
-            <a name="Outline">Outline</a>
+            <a name="Outline">Program</a>
           </h1>
-          <div class="ui list">
-            <div class="item">
-              <div>
-                <p><b>Part I, The philosophy of the Robotics Language and the compiler (30min)</b></p>
-              </div>
-              <div class="ui bulleted list">
-                <div class="item">
-                  <p>Background</p>
-                </div>
-                <div class="item">
-                  <p>ROS and ROSin</p>
-                </div>
-                <div class="item">
-                  <p>The language of robotics</p>
-                </div>
-                <div class="item">
-                  <p>Compiler architecture</p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div>
-                <p><b>Part II, Using the Robotics Language (1 hour)</b></p>
-              </div>
-              <div class="ui bulleted list">
-                <div class="item">
-                  <p>Types, variables, functions</p>
-                </div>
-                <div class="item">
-                  <p>Abstraction languages</p>
-                </div>
-                <div class="item">
-                  <p>Event-based vs synchronous execution</p>
-                </div>
-                <div class="item">
-                  <p>Special constructs</p>
-                </div>
-                <div class="item">
-                  <p>Extending the language</p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div>
-                <p><b>Part III, Tools (3 hour)</b></p>
-              </div>
-              <div class="ui bulleted list">
-                <div class="item">
-                  <p>Temporal Logic (30 min)</p>
-                </div>
-                <div class="item">
-                  <p>Finite State Machines (30 min)</p>
-                </div>
-                <div class="item">
-                  <p>Deep learning (1 hour)</p>
-                </div>
-                <div class="item">
-                  <p>External lecturer TBA, 1 hour </p>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div>
-                <p><b>Part IV, Developing abstraction languages (1.5 hour)</b></p>
-              </div>
-              <div class="ui bulleted list">
-                <div class="item">
-                  <p>A Parser for a finite state machine abstraction language</p>
-                </div>
-                <div class="item">
-                  <p>Transformer and code generation</p>
-                </div>
-                <div class="item">
-                  <p>HTML interactive GUI</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h1 class="ui horizontal header divider">
-            <a name="Case studies">Case studies</a>
-          </h1>
-          <div class="ui equal width stackable internally grid">
-            <div class="row">
-              <div class="column">
-                <img src="images/lea.jpg" />
-                <p><a href="https://www.robotcaresystems.com/producten/">Lea is an assistive walker</a>. It supports people with challenges in mobility. It is a full autonomous robot: it can navigate in user's homes or hospitals. Lea’s supervisory
-                  engine is running ROL. Four different abstraction languages were used in the development of Lea.</p>
-              </div>
-              <div class="column">
-                <img src="images/wepods.png" />
-                <p><a href="https://www.i-at.nl">WePods is a self-driving mini-bus</a>. The upcoming decision-tree engine of WePods is designed using ROL.</p>
-              </div>
-            </div>
-          </div>
+          <table class="ui celled table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Talk</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Time">9:00 – 9:30</td>
+                <td data-label="Talk">Introduction to AWS Robomaker</td>
+                <td data-label="Comments">Slides presentation</td>
+              </tr>
+              <tr>
+                <td data-label="Time">9:30 – 10:00</td>
+                <td data-label="Talk">Introduction to the Robotics Language</td>
+                <td data-label="Comments">Slides presentation</td>
+              </tr>
+              <tr>
+                <td data-label="Time">10:00 – 11:00</td>
+                <td data-label="Talk">Setting up cloud infrastructure for development</td>
+                <td data-label="Comments">Interactive session. Attendees are invited to run software in the cloud</td>
+              </tr>
+              <tr>
+                <td data-label="Time">11:00 – 11:30</td>
+                <td data-label="Talk">Coffee break</td>
+                <td data-label="Comments"></td>
+              </tr>
+              <tr>
+                <td data-label="Time">11:30 – 12:30</td>
+                <td data-label="Talk">Developing behavior using the Robotics Language</td>
+                <td data-label="Comments">Interactive session using cloud infrastructure.</td>
+              </tr>
+              <tr>
+                <td data-label="Time">12:30 – 13:20</td>
+                <td data-label="Talk">Simulation and Deployment</td>
+                <td data-label="Comments">Interactive session. On-site robots run software created during the tutorial</td>
+              </tr>
+              <tr>
+                <td data-label="Time">13:20 – 12:30</td>
+                <td data-label="Talk">Concluding remarks</td>
+                <td data-label="Comments">Slides presentation</td>
+              </tr>
+              <tr>
+                <td data-label="Time">13:30</td>
+                <td data-label="Talk">End</td>
+                <td data-label="Comments"></td>
+              </tr>
+            </tbody>
+          </table>
           <h1 class="ui horizontal header divider">
             <a name="Resources">Resources</a>
           </h1>
           <div class="ui bulleted list">
             <div class="item">
-              <p>Robotics language on github: <a href="https://github.com/robotcaresystems/RoboticsLanguage">https://github.com/robotcaresystems/RoboticsLanguage</a></p>
+              <p>AWS RoboMaker: <a href="https://aws.amazon.com/robomaker/">https://aws.amazon.com/robomaker/</a></p>
+            </div>
+            <div class="item">
+              <p>Robotics language: <a href="https://github.com/robotcaresystems/RoboticsLanguage">https://github.com/robotcaresystems/RoboticsLanguage</a></p>
             </div>
             <div class="item">
               <p>Ros-Industrial consortium: <a href="https://rosindustrial.org">https://rosindustrial.org</a></p>
             </div>
             <div class="item">
-              <p> ROSIN EU project: <a href="http://rosin-project.eu">http://rosin-project.eu</a></p>
-            </div>
-            <div class="item">
-              <p>IEEE IRC 2019: <a href="http://irc.asia.edu.tw/2019/">http://irc.asia.edu.tw/2019/</a></p>
-            </div>
-            <div class="item">
-              <p>Robot care systems: <a href="http://www.robotcaresystems.com">http://www.robotcaresystems.com</a></p>
+              <p>ROSIN EU project: <a href="http://rosin-project.eu">http://rosin-project.eu</a></p>
             </div>
           </div>
           <h1 class="ui horizontal header divider">
@@ -474,11 +416,35 @@ The target audience ranges industry and academia, from young students as users, 
     ROSIN acknowledgement from the ROSIN press kit
     @ https://github.com/rosin-project/press_kit
 -->
-          <a href="http://rosin-project.eu">
-            <img src="http://rosin-project.eu/wp-content/uploads/rosin_ack_logo_wide.png" alt="rosin_logo" height="60">
-          </a> Supported by ROSIN - ROS-Industrial Quality-Assured Robot Software Components. More information: <a href="http://rosin-project.eu">rosin-project.eu</a>
-          <img src="http://rosin-project.eu/wp-content/uploads/rosin_eu_flag.jpg" alt="eu_flag" height="45" align="left"> This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant
-          agreement no. 732287.
+          <table class="ui celled table">
+            <tr>
+              <td>
+                <a href="http://www.robotrobotscompany.nl">
+                  <img src="images/rrc.png" />
+                </a> Supports the Robotics Language
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://aws.amazon.com/robomaker/">
+                  <img src="images/aws.png" />
+                </a>
+                AWS RoboMaker
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://rosin-project.eu">
+                  <img src="http://rosin-project.eu/wp-content/uploads/rosin_ack_logo_wide.png" alt="rosin_logo" height="60">
+                </a>
+                <br>
+                 Supported by ROSIN - ROS-Industrial Quality-Assured Robot Software Components. More information: <a href="http://rosin-project.eu">rosin-project.eu</a>
+
+                 <br>
+                <img src="http://rosin-project.eu/wp-content/uploads/rosin_eu_flag.jpg" alt="eu_flag" height="45" align="left"> This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant
+                agreement no. 732287. </td>
+            </tr>
+          </table>
         </div>
       </div>
       <div class="ui inverted vertical footer segment">
