@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <!-- Site Properties -->
-    <title>Robotics Language Tutorial</title>
+    <title>Robotics in a day: ROS, ROL, AWS RoboMaker</title>
     <script src="js/jquery.min.js"></script>
     <script src="js/components/visibility.js"></script>
     <script src="js/components/sidebar.js"></script>
@@ -214,13 +214,20 @@
           </div>
         </div>
         <div class="ui text container">
-          <h1 class="ui inverted header"> Robotics in a day: ROS, ROL, AWS RoboMaker </h1>
-          <h2><a href="http://irc.asia.edu.tw/2019/">Tutorial IROS 2019</a></h2>
+          <h1 class="ui inverted header"> Robotics in a day: ROS, ROL, AWS RoboMaker</h1>
+          <h2>Using industrial-strength development tools to quickly setup the infrastructure, program, simulate, and deploy robotic applications.</h2>
+          <h2><a href="https://www.iros2019.org">Tutorial IROS 2019</a></h2>
           <!-- <div class="ui huge primary button">Get Started <i class="right arrow icon"></i></div> -->
         </div>
       </div>
       <div class="ui equal width stackable internally grid">
         <div class="center aligned row">
+          <div class="column">
+            <a href="https://aws.amazon.com/robomaker/">
+              <img src="images/aws.png" />
+              <p> AWS RoboMaker </p>
+            </a>
+          </div>
           <div class="column">
             <a href="https://github.com/robotcaresystems/RoboticsLanguage">
               <img src="images/rol.png" />
@@ -244,155 +251,64 @@
           <h3 class="ui header">
             <a name="Introduction">Introduction</a>
           </h3>
-          <p>The Robotics Language (RoL) is an open extensible domain-specific (or model-based) language for robotics. RoL is an abstraction on top of ROS to efficiently and quickly develop ROS applications using a mathematics-centred language. RoL
-            generates ROS c++ nodes, HTML interfaces, or any other elements. The base RoL language has a structure similar to standard high-level programming languages. </p>
-          <div class="ui blue message"><b><i>Domain Specific Languages</i></b> are computer languages specialised to a particular application domain. Such languages use the minimum information required to describe a particular concept for a domain,
-            thus present an abstraction of information. </div>
-          <!-- <h3 class="ui header">We Make Bananas That Can Dance</h3>
-          <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p> -->
-          <pre><code class="coffeescript">
-# A simple topic echo node
-node(
-name:'example echo',
+          <p>This workshop focuses on quick setup, programming and deployment of software on robots. The objective of the tutorial is to familiarize academic and industry robotics practitioners with new state- of-the-art development tools which were
+            launched within the last 6 months. Revolving around the <a href="https://ros.org">ROS ecosystem (Robot Operative System)</a>, we focus on the cloud infrastructure provided by <a href="https://aws.amazon.com/robomaker/">Amazon Web
+              Services (AWS) RoboMaker</a>, and the open-source <a href="https://github.com/robotcaresystems/RoboticsLanguage">Robotics Language (RoL)</a> as a general-purpose robotics programming language. With the combination of both tools, users
+            can speed up development without the need of setting up infrastructure or use very low-level programming languages. Yet, the outcome is industrial-strength high performance computation, by leveraging on cloud computing and auto-generated
+            c++ code. This interactive tutorial spans the entire development process: from setting up a cloud-based development environment, programing a non- trivial behavior on a robot, simulating, and finally deploying. </p>
+          <p> AWS RoboMaker is a service that makes it easy to develop, test, and deploy intelligent robotics applications at scale. RoboMaker extends the most widely used open-source robotics software framework, ROS, with connectivity to cloud
+            services. This includes AWS machine learning services, monitoring services, and analytics services that enable a robot to stream data, navigate, communicate, comprehend, and learn. RoboMaker provides a robotics development environment
+            for application development, a robotics simulation service to accelerate application testing, and a robotics fleet management service for remote application deployment, update, and management. More information at: <a href="https://aws.amazon.com/robomaker/">https://aws.amazon.com/robomaker/</a>
+          </p>
+          <p> RoL is an open programming language framework for robotics. RoL builds programming abstractions on top of ROS to efficiently and quickly develop ROS applications using a mathematics-centered language. RoL uses the concept of
+            abstraction languages to simplify programming by combining multiple domain specific languages in a single file. This results in a vertical abstraction approach for development (using many languages), as opposed to the classical
+            horizontal abstraction approach (abstraction by creating libraries using the same language). RoL generates ROS1/2 and c++/python nodes, HTML interfaces, or any other elements. The base RoL language has a structure similar to standard
+            high-level programming languages, it is open and highly customizable. In this tutorial we go over using the RoL language, its tools, abstraction languages, and creating a new abstraction language. More information at: <a href="https://github.com/robotcaresystems/RoboticsLanguage">https://github.com/robotcaresystems/RoboticsLanguage</a>
+          </p>
+          <p> This tutorial also serves as a vehicle for discussion in the way future robotics development will evolve. We aim to address cloud vs edge computing; shared knowledge and learning; programing languages and abstractions; safety, privacy,
+            performance and certification. </p>
 
-definitions: block(
-  # the input signal
-  echo_in ∈ Signals(Strings, rosTopic:'/echo/in', onNew: echo_out = echo_in ),
 
-  # the echo signal
-  echo_out ∈ Signals(Strings, rosTopic:'/echo/out')
-)
-)
-</code>
-</pre>
-          <p>In addition RoL has the ability to integrate <b><i>abstraction languages</i></b> that simplify the way code is written. This results in a “vertical” abstraction approach for development (using many languages), as opposed to the
-            classical “horizontal” abstraction approach used in most projects (abstraction by creating libraries using the same language). </p>
-          <div class="ui blue message"><b><i>Abstraction languages</i></b> are programming languages with the purpose of simplifying concepts. Abstraction languages compile into standard programming languages.</div>
-          <pre><code class="coffeescript">
-# A finite state machine
-node(
-  name:'example state machine',
+          <h3>Topics of interest</h3>
+          <div class="ui bulleted list">
+            <div class="item">
+              <p>Robotics development tools</p>
+            </div>
+            <div class="item">
+              <p>Software infrastructure, simulation, deployment</p>
+            </div>
+            <div class="item">
+              <p>Robot programming languages</p>
+            </div>
+            <div class="item">
+              <p>Cloud computing</p>
+            </div>
+            <div class="item">
+              <p>Machine learning</p>
+            </div>
+            <div class="item">
+              <p>ROS, Robot Operative Systems</p>
+            </div>
+            <div class="item">
+              <p>ROL, Robotics Language</p>
+            </div>
+            <div class="item">
+              <p>Abstraction languages, domain specific languages, compilers</p>
+            </div>
+            <div class="item">
+              <p>Correct-by-design software and certificaton </p>
+            </div>
+          </div>
 
-  definitions: block(
+          <h3>Intended audience</h3>
+<p>
+            The topics addressed in the tutorial are crucial for all developers of robotic applications, being in industry or academia. In industry it is particularly relevant for startups and SME’s where agile development, small teams and cutting-edge tools are used to create new disruptive robots. Time saved in infrastructure and programming is used for innovation. For more established companies, scalability and cloud computation are crucial. For academics, the tools presented in the tutorial remove the tremendous infrastructure and programming overhead put on robotics students, thus allowing them to focus on algorithms. Using the web tools provided by the AWS cloud infrastructure and the programming abstractions available in RoL, non-technical users can program robots using high-level behaviors. Thus, non-technical robotics stakeholders also benefit from this tutorial.</p>
+            <p>
+The target audience ranges industry and academia, from young students as users, to senior professionals as contributors. In particular, roboticists, computer scientists, linguists, and other relevant non-technical are welcomed.
+</p>
 
-    # an abstraction language: code is defined within `<{ }>`
-    FiniteStateMachine<{
 
-      name:machine
-      initial:idle
 
-      (idle)-start->(running)-stop->(idle)
-      (running)-error->(fault)-reset->(idle)
-      (idle)-calibration->(calibrate)-reset->(idle)
-
-    }>,
-
-    # the start signal
-    start ∈ Signals(Empty, rosTopic:'/start', onNew: machine.fire('start')),
-
-    # the stop signal
-    stop ∈ Signals(Empty, rosTopic:'/stop', onNew: machine.fire('stop'))
-
-  )
-)
-</code>
-</pre>
-          <p>ROL generates code to different versions of ROS</p>
-          <table class="ui celled table">
-            <tr>
-              <td> Original ROL code </td>
-              <td>
-                <pre><code class="coffeescript">
-echo_in ∈ Signals(Strings, rosTopic:'/echo/in'),
-</code>
-</pre>
-              </td>
-            </tr>
-            <tr>
-              <td> Generated ROS1 c++ code </td>
-              <td>
-                <pre>
-    <code class="cpp">
-/* header file definitions */
-ros::Subscriber echo_in_subscriber;
-void signal_echo_in_callback(const std_msgs::String& signal_echo_in_message);
-std_msgs::String echo_in;
-
-...
-
-/* initialisation */
-echo_in_subscriber = nh_.subscribe("/echo/in", 10,
-    &ExampleEchoClass::signal_echo_in_callback, this);
-
-...
-
-/* callback function implementation */
-void ExampleEchoClass::signal_echo_in_callback(const std_msgs::String& signal_echo_in_message)
-{
-  ...
-}
-    </code>
-    </pre>
-              </td>
-            </tr>
-            <tr>
-              <td> Generated ROS2 c++ code </td>
-              <td>
-                <pre>
-    <code class="cpp">
-/* header file definitions */
-rclcpp::Subscription<std_msgs::msg::String>::SharedPtr echo_in_subscriber;
-void signal_echo_in_callback(const std_msgs::msg::String::SharedPtr message);
-std_msgs::msg::String echo_in;
-
-...
-
-/* initialisation */
-echo_in_subscriber = this->create_subscription<std_msgs::msg::String>(
-    "/echo/in", std::bind(&ExampleEchoClass::signal_echo_in_callback, this, _1));
-
-...
-
-/* callback function implementation */
-void ExampleEchoClass::signal_echo_in_callback(const std_msgs::msg::String::SharedPtr message)
-{
-  ...
-}
-    </code>
-    </pre>
-              </td>
-            </tr>
-          </table>
-          <p>Automatically generated graphical user interfaces in the browser allow for development and monitoring.</p>
-          <img src="images/FiniteStateMachine.png">
-          <p>RoL contains high-level language element abstractions that are very useful for robotics, such as Interval Temporal Logic for signals.</p>
-          <pre><code class="coffeescript">
-
-node(
-  name:'temporal logic test example',
-
-  definitions: block(
-
-    # a signal
-    x ∈ Signals(Booleans, rosTopic:'/temporal_logic/x'),
-
-    when(□[1,0](x),
-      print('always in the last second')),
-
-    when(◇[4,1](x),
-      print('eventually from 4 seconds to 1 second ago')),
-
-    when(□[5,0](◇[1,0](x) ∧ ◇[1,0](¬x)),
-      print('oscillating faster then 1Hz for at least 5 seconds'))
-
-  )
-)
-
-</code>
-</pre>
-          <p>Generated GUIs visualise the signals in time and the outcome of the logic.</p>
-          <img src="images/TemporalLogic.png">
-          <p>In this tutorial we go over using the RoL language, its tools, abstraction languages, and creating new language elements and plugins.</p>
           <h1 class="ui horizontal header divider">
             <a name="Organizers">Organizers</a>
           </h1>
@@ -406,24 +322,25 @@ node(
                   systems, nonlinear control, machine learning, software architectures, and many other topics. </p>
               </div>
               <div class="column">
-                <img src="images/carlos.png" />
-                <p class="smalltext"><a href="https://www.tudelft.nl/staff/c.h.corbato/"> <b>Dr. Carlos Hernández Corbato</b></a> is a postdoctoral researcher at the Department of Cognitive Robotics, Delft University of Technology, in the Robot Dynamics
-                  Group. He graduated with honors in Industrial Engineering (2006) and received his M.Sc. Ph.D in Automation and Robotics from the Universidad Politecnica de Madrid in 2013. Carlos is currently the coordinator of the ROSIN European
-                  project granted in the H2020 program. He has participated in other national and European projects in the topics of cognitive robotics and factories of the future. His research interests include cognitive architectures, autonomy and
-                  model-based engineering. He also (jointly) lead Team Delft, that won the Amazon Robotics Challenge 2016.</p>
+                <img src="images/ray.jpg" />
+                <p class="smalltext"> <b>Ray Zhu</b> is a Senior product manager at AWS. He received a BE in Electronic and Information from the Nanjing University of Posts and Telecommunications in China, an MBA in International Exchange from the
+                  London Business School, and an MBA from the University of Chicago Booth School of Business. Since 2014 Mr. Zhu has worked at AWS in Kinesis Firehose, a service that makes streaming data to AWS easier, and currently does lead
+                  product management for AWS RoboMaker, a service that makes robotics development easier and makes robots smarter. In this tutorial Mr. Zhu will focus on AWS RoboMaker infrastructure setup.</p>
               </div>
             </div>
             <div class="row">
               <div class="column">
-                <img src="images/mitsos.png" />
-                <p class="smalltext"> <b>Msc. Dimitrios Chronopoulos</b> is an Embedded Systems Engineer (Master of Science, TUDelft). Software Team Leader in RRC Robotics currently in charge of the Autonomous Navigation, Mapping and Localization System
-                  and the High-Level Behaviour of the LEA robot (powered by an early version of the Robotics Language). Has additional experience in Embedded Software, Networking and Electrical Engineering. </p>
+                <img src="images/douglas.jpg" />
+                <p class="smalltext"> <b>Douglas Fulop</b> is a Senior product manager at AWS. He received his B.S. Cum Laude in Finance, Management, New York University - Leonard N. Stern School of Business. He was a Product Manager at Kindred.ai,
+                  a machine learning / artificial intelligence robotics startup backed by Google Ventures. Since 2017 he is a Senior Product Manager at AWS RoboMaker. He is currently a lecturer in AI at the California College of Arts. In this
+                  tutorial Mr. Fulop will focus on simulation and deployment.</p>
               </div>
               <div class="column">
-                <img src="images/floris.png" />
-                <p class="smalltext"> <b>Ir. Floris Gaisser</b> is a senior engineer and co-founder of RRC Robotics. He is currently a leader in the WEPods project: self-driving public buses. He has a Bsc. in Industrial Design Engineering, and a Msc. in
-                  Mechanical Engineering in the field of Biomechanical Design with specialisations in Biorobotics and Intelligent Mechanical Systems, all at the Delft University of Technology, NL. His interests include robotics, self-driving cars,
-                  machine learning. </p>
+                <img src="images/carlos.png" />
+                <p class="smalltext"><a href="https://www.tudelft.nl/staff/c.h.corbato/"> <b>Dr. Carlos Hernández Corbato</b></a> is a postdoctoral researcher at the Department of Cognitive Robotics, Delft University of Technology, in the Robot
+                  Dynamics Group. He graduated with honors in Industrial Engineering (2006) and received his M.Sc. Ph.D in Automation and Robotics from the Universidad Politecnica de Madrid in 2013. Carlos is currently the coordinator of the ROSIN
+                  European project granted in the H2020 program. He has participated in other national and European projects in the topics of cognitive robotics and factories of the future. His research interests include cognitive architectures,
+                  autonomy and model-based engineering. He also (jointly) lead Team Delft, that won the Amazon Robotics Challenge 2016.</p>
               </div>
             </div>
             <!-- <div class="row">
@@ -550,30 +467,18 @@ node(
               <p>Robot care systems: <a href="http://www.robotcaresystems.com">http://www.robotcaresystems.com</a></p>
             </div>
           </div>
-
           <h1 class="ui horizontal header divider">
             <a name="Support">Support</a>
           </h1>
-
           <!--
     ROSIN acknowledgement from the ROSIN press kit
     @ https://github.com/rosin-project/press_kit
 -->
-
-<a href="http://rosin-project.eu">
-  <img src="http://rosin-project.eu/wp-content/uploads/rosin_ack_logo_wide.png"
-       alt="rosin_logo" height="60" >
-</a>
-
-Supported by ROSIN - ROS-Industrial Quality-Assured Robot Software Components.
-More information: <a href="http://rosin-project.eu">rosin-project.eu</a>
-
-<img src="http://rosin-project.eu/wp-content/uploads/rosin_eu_flag.jpg"
-     alt="eu_flag" height="45" align="left" >
-
-This project has received funding from the European Union’s Horizon 2020
-research and innovation programme under grant agreement no. 732287.
-
+          <a href="http://rosin-project.eu">
+            <img src="http://rosin-project.eu/wp-content/uploads/rosin_ack_logo_wide.png" alt="rosin_logo" height="60">
+          </a> Supported by ROSIN - ROS-Industrial Quality-Assured Robot Software Components. More information: <a href="http://rosin-project.eu">rosin-project.eu</a>
+          <img src="http://rosin-project.eu/wp-content/uploads/rosin_eu_flag.jpg" alt="eu_flag" height="45" align="left"> This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant
+          agreement no. 732287.
         </div>
       </div>
       <div class="ui inverted vertical footer segment">
